@@ -1,0 +1,127 @@
+html, body{
+    margin:0;
+    padding:0;
+    background-color: #45A29E;
+}
+
+.mainDiv{
+
+    display: flex; 
+    flex-direction: column; 
+}
+
+header {
+
+    padding: 0;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    height: 10%;
+    background-color: #2b3847;
+}
+    
+main {
+    padding: 1%;
+    flex: auto;
+}
+
+.headerDivLogo{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    width: 85%;
+    padding: 5px;
+    justify-content: center;
+
+}
+
+.headerLogin {
+
+    text-align: center;
+    background-color: #C5C6C7;
+
+    width: 15%;
+    padding: 1%;
+    padding-top: 0;
+    padding-bottom: 10px;
+
+    float: right;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /*TODO: falta estilizar botones de login*/
+
+}
+
+.logo {
+    position: absolute;
+    left: 0%;
+    object-fit: contain;
+    height: 75px;
+    padding: 5px;
+    margin: 0;
+}
+
+.headerLogged {
+
+    text-align: center;
+    background-color: #C5C6C7;
+
+    width: 15%;
+    padding: 1%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.notificationBell{
+    height: 30px;
+    padding-right: 15px;
+}
+
+.profilephoto {
+    height: 65px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 955px){
+
+    /*TODO HACER PA QUE NO SE BUGEE */
+
+}
+
+.optionsbtn{
+    
+    margin-right: 5px;
+}
+
+.calendar-bts-div{
+
+}
+
+.calendar-btns, .optionsbtn{
+
+    /*TODO: REVISAR */ 
+    background-color: #2b3847;
+    border-style: None;
+    border-width: 0px;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    
+}
+
+.calendar-btns:hover, .optionsbtn:hover{
+    background-color: #1f1f1f;
+}
