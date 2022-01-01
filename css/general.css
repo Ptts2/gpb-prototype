@@ -102,8 +102,11 @@ main {
     margin-right: 5px;
 }
 
-.calendar-bts-div{
-
+.calendar-bts-div, .optionsDropdown{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .calendar-btns, .optionsbtn{
@@ -119,6 +122,7 @@ main {
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
+    height: 100%;
     
 }
 
