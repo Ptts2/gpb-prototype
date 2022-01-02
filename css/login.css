@@ -1,4 +1,38 @@
-.loginBody {
 
 
+/* Login popup */
+
+.open_button{
+
+
+}
+
+.close_button{
+
+}
+
+.popup{
+    margin-top: 110px;
+    position: absolute;
+    width: 150px;
+    z-index: 999;
+    display: none;
+    top:0;
+    background-color: #2b3847;  
+    border-radius: 5px;  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);  
+    overflow: hidden;   
+    padding: 10px;
+}
+
+.loginPopupBody{
+    height: 100px;
+}
+
+.registerPopupBody{
+    height: 200px;
+}
+
+#loginForm input, #registerForm input{
+    width: 130px;
 }

@@ -7,7 +7,7 @@
         <title> GPB Login </title>
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/login.css">
-        <script src="login.js"></script>
+        <script src="js/login.js"></script>
     </head>
 
     <body>
@@ -20,8 +20,58 @@
 
                 <div class="headerLogin">
                     <p> ¡No has iniciado seasión!</p>
-                    <button> Inicia sesión </button>
-                    <button> Registrate ahora! </button>
+                    <div>
+                        <button class="open_button" onClick="openLogin()"> Inicia sesión </button>
+                        <div class="popup" id="loginPopup">
+
+                            <div class="loginPopupBody"> 
+                                <form id="loginForm"> 
+                                    <label for="unameInputL">Username: </label>
+                                    <input type="text" name="unameL" id="unameInputL" required></input>
+                                    <br>
+                                    <label for="pwInputL">Password: </label>
+                                    <input type="password" name="passowrdL" id="pwInputL" required></input>
+                                </form>
+                            </div>
+                            <button class="loginBut"onClick="login()">Entrar</button>
+                            <button class="close_button"onClick="closeLogin()">Cerrar</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="open_button" onClick="openRegister()"> Registrate ahora! </button>
+
+                        <div class="popup" id="registerPopup">
+
+                            <div class="registerPopupBody"> 
+                                <form id="registerForm"> 
+                                    <label for="nombreInputR">Nombre: </label>
+                                    <input type="text" name="nombreR" id="nombreInputR" required></input>
+                                    <br>
+
+                                    <label for="apellidosInputR">Apellidos: </label>
+                                    <input type="text" name="apellidosR" id="apellidosInputR" required></input>
+                                    <br>
+
+                                    <label for="unameInputR">Username: </label>
+                                    <input type="text" name="unameR" id="unameInputR" required></input>
+                                    <br>
+
+                                    <label for="emailInputR">Email: </label>
+                                    <input type="email" name="emailR" id="emailInputR" required></input>
+                                    <br>
+
+                                    <label for="passwordInputR">Password: </label>
+                                    <input type="password" name="passwordR" id="passwordInputR" required></input>
+                                    <br>
+                                    
+
+                                </form>
+                            </div>
+                            <button class="registerBut"onClick="register()">Registrarse</button>
+                            <button class="close_button"onClick="closeRegister()">Cerrar</button>
+                        </div>
+                    </div>
                 </div>
                 
             </header>
