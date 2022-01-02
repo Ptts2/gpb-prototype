@@ -26,7 +26,6 @@ function closeRegister(){
     el.style.display = 'none';
 }
 
-
 function register(){
     alert("Los registros estan cerrados");
 }

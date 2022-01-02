@@ -124,7 +124,7 @@ main {
 }
 
 
-/*Desplegable*/
+/*Desplegable opciones calendar*/
 
 .optionsDropdown{
     position: relative;
@@ -159,8 +159,61 @@ main {
     background-color: #1f1f1f;
 }
 
-/*Desplegable fin*/
+/*Desplegable opciones calendar fin*/
 
+/*Desplegable user*/
+
+.userDropdown{
+    position: relative;
+    display: inline-block;
+
+}
+
+.user-options-content{
+    transition: all 0s ease 0.05s;
+    visibility: hidden;
+    position: absolute;
+    margin-top: 20px;
+    background-color: #2b3847; 
+    min-width: 150px;
+    right: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.optionUserButton {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.optionUserButton:hover{
+    background-color: #1f1f1f;
+}
+
+.userDropdown:hover .user-options-content {
+    transition-delay: 0s;
+    visibility: visible;
+}
+
+/*Desplegable user fin*/
+
+#notificationPopup{
+    margin-top: 110px;
+    position: absolute;
+    width: 200px;
+    z-index: 999;
+    display: none;
+    top:0;
+    margin-left: -190px;
+    background-color: #2b3847;  
+    border-radius: 5px;  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);  
+    overflow: hidden;   
+    padding: 10px;
+    text-align: left;
+}
 
 @media screen and (max-width: 955px){
 

@@ -16,6 +16,7 @@
 
                 <div class="headerDivLogo">
                     <img class="logo" src="res/logo.png" alt="google pero bien logo">
+
                     <div class ="optionsDropdown"> 
                         <button class="optionsbtn">OPCIONES</button>
                         <div class="options-content">
@@ -35,9 +36,33 @@
                 </div>
 
                 <div class="headerLogged">
-                    <img class="notificationBell" src="res/notif.png"> <br>
+                    
+                    <div>
+                        <img class="notificationBell" onClick="openNotification()" src="res/notif.png"> 
+                        <div class="popup" id="notificationPopup">
+
+                            <div class="notifcationPopupBody"> 
+                                Aviso 1: Examen el lunes <br>
+                                Aviso 2: Clase el martes <br>
+                                Aviso 3: Clase el jueves canacelada <br>
+                            </div>
+                            <button class="close_button"onClick="closeNotification()">Cerrar</button>
+                        </div>
+                    </div>
+                    
+
                     <p id="loggedUsername"> Nombre de usuario </p> <br>
-                    <img class="profilephoto" src="res/ppf.png">
+
+                    <div class ="userDropdown"> 
+                        <img class="profilephoto" src="res/ppf.png">
+                        <div class="user-options-content">
+                            <!-- TODO: Opciones de opciones-->
+                            <a class="optionUserButton" href="./profile.html">Mi perfil</a>
+                            <a class="optionUserButton" href="./acc-adm-panel.html">Administrar mi cuenta</a>
+                            <a class="optionUserButton" onClick="cerrarSesion()">Cerrar sesión</a>
+                        </div>
+                    </div>
+
                 </div>
                 
             </header>
