@@ -16,7 +16,7 @@
         <script src="js/general.js"></script>
     </head>
 
-    <body>
+    <body  onload="changeTitleGeneral()">
         <div class="mainDiv">
 
             <header> 
@@ -37,8 +37,8 @@
 
                     <!-- TODO: Hacer las actions para que el javascript cambie los textos (el calendario no lo cambiamos xd)-->
                     <div class="calendar-bts-div">
-                        <button class="calendar-btns">GENERAL</button>
-                        <button class="calendar-btns">PERSONAL</button>
+                        <button class="calendar-btns" onclick= "changeTitleGeneral()">GENERAL</button>
+                        <button class="calendar-btns" onclick="changeTitlePersonal()">PERSONAL</button>
                     </div>
                 </div>
 
@@ -76,7 +76,28 @@
 
             <main class="calendarBody"> 
 
-                BODY 
+                <h1 id = "title">
+                    <label id="general"></label>
+                    <img id="left" src="res/Flecha-iquierda.PNG" alt="Flecha-izquierda"> 
+                    <label id="weeks"></label>
+                    <img id="right" src="res/Flecha-derecha.PNG" alt="Flecha-derecha">
+                    
+                </h1>
+
+                <p id="calendar">
+                    <table id="table">
+                        <tr>
+                          <td class="void"></td>
+                          <td>Celda 2</td>                     
+                          <td>Celda 3</td>                     
+                        </tr>                     
+                        <tr>                      
+                          <td>Celda 4</td>                      
+                          <td>Celda 5</td>                      
+                          <td>Celda 6</td>                      
+                        </tr>                      
+                    </table>
+                </p>
 
             </main>
         </div> 

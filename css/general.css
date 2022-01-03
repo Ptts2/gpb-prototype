@@ -219,3 +219,35 @@ main {
 
     /*TODO HACER PA QUE NO SE BUGEE */
 }
+
+#title{
+    margin-left: 150px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#left{
+    height: 20px;
+    margin-left: 60px;
+}
+
+#right{
+    height: 20px;
+    margin-left: 20px;
+}
+
+#weeks{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+td{
+    background-color: white;
+    border: #000000 1px solid;
+}
+
+.void{
+    background-color: #45A29E;
+    border: #000000 0px solid;
+}
