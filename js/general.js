@@ -23,4 +23,6 @@ function changeTitlePersonal(){
     document.getElementById('weeks').innerHTML = "ww/mm";
 }
 
-createCalendar()
+createCalendar(){
+    
+}
