@@ -1,7 +1,47 @@
+#title{
+    margin-left: 150px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#left{
+    height: 20px;
+    margin-left: 60px;
+}
+
+#right{
+    height: 20px;
+    margin-left: 20px;
+}
+
+#weeks{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.c1{
+    width: 5%;
+    background-color: rgb(161, 161, 161);
+}
+
+.f1{
+    background-color: rgb(161, 161, 161);
+}
+
 td{
     background-color: white;
     border: #000000 1px solid;
     width: 53px;
     height: 60px;
     text-align: center;
+}
+
+table{
+    margin-left: 60px;
+}
+
+.void{
+    background-color: #45A29E;
+    border: #000000 0px solid;
 }
