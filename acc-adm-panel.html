@@ -69,7 +69,47 @@
 
             <main class="accAdmBody"> 
 
-                BODY 
+                <div class="divAdmData">
+
+                    <div id="divRegularData">
+                        <h2>CAMBIAR DATOS</h2>
+                        <table class="regularDataTable">
+                            <tr class="regularData" id="name">
+                                <td class="fieldName">Nombre:</td>
+                                <td class="fieldName"><input type="text" placeholder="ALUMNO" maxlength="15"></td>
+                            </tr>
+                            <tr class="regularData" id="surname">
+                                <td class="fieldName">Apellidos:</td>
+                                <td class="fieldName"><input type="text" placeholder="ALUMNO" maxlength="15"></td>
+                            </tr>
+                            <tr class="regularData" id="username">
+                                <td class="fieldName">Username:</td>
+                                <td class="fieldName"><input type="text" placeholder="Buen_alumno12" maxlength="15"></td>
+                            </tr>
+                            <tr class="regularData" id="email">
+                                <td class="fieldName">Email:</td>
+                                <td class="fieldName"><input type="email" placeholder="Alumno69@gmail.com" maxlength="30"></td>
+                            </tr>
+                        </table>
+                        <button id="normalDataButton">CAMBIAR DATOS</button>
+                    </div>
+
+                    <div id="divPasswordData">
+                        <h2>CAMBIAR CONTRASEÑA</h2>
+                        <table class="passTable">
+                            <!-- Cambiar contraseña -->
+                            <tr class="changePassword">
+                                <td class="fieldName">Nueva Contraseña:</td>
+                                <td class="fieldName"><input type="password" minlenght="8" maxlength="30" required></td>
+                            </tr>
+                            <tr class="changePassword">
+                                <td class="fieldName">Repite Contraseña:</td>
+                                <td class="fieldName"><input type="password" minlenght="8" maxlength="30" required></td>
+                            </tr>
+                        </table>
+                        <button id="passButton">CAMBIAR CONTRASEÑA</button>
+                    </div>
+                </div>
 
             </main>
         </div> 
