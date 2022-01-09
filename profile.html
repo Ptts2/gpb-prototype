@@ -72,7 +72,8 @@
                 <div id="profilePhoto">
                     <h2>FOTO DE PERFIL</h2>
                     <img src="res/ppf.png" alt="imagen de perfil">
-                    <button>CAMBIAR IMAGEN</button>
+                    <button type="file" onclick="document.getElementById('getImage').click()">CAMBIAR IMAGEN</button>
+                    <input type="file" id="getImage" name="img" accept="image/*"  style="display:none">
                 
                 </div>
                 <div id="userData">
@@ -84,7 +85,7 @@
                     <span>Contraseña:&nbsp</span> <span class="dataSpan">**********</span><br><br>
                     
                     <div class="changeDataAccDiv"> 
-                        <button>CAMBIAR DATOS</button>&nbsp
+                        <button onclick="window.location='acc-adm-panel.html'">CAMBIAR DATOS</button>&nbsp
                         <button>ELIMINAR CUENTA</button>
 
                     </div>
