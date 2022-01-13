@@ -118,3 +118,9 @@ function login(){
     }
     
 }
+
+function cerrarSesion(){
+    tipoCuenta = 'none';
+    loggedUser = '-1'
+    window.location.href = './login.html';
+}
