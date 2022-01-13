@@ -5,7 +5,7 @@ actividadesGenerales = [
     },
     {
       nombre: 'lengua',
-      color: '#0b5394'
+      color: '#3d85c6'
     },
     {
       nombre: 'mates',
@@ -24,11 +24,11 @@ actividadesGenerales = [
  actividadesPersonales = [
     {
       nombre: 'Mates',
-      color: '#274e13'
+      color: '#d0e0e3'
     },
     {
       nombre: 'Fiesta',
-      color: '#4c1130'
+      color: '#f6b26b'
     },
     {
       nombre: 'Comida',
