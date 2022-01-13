@@ -47,6 +47,8 @@ actividadesGenerales = [
 actsGenerales = document.getElementsByClassName('actGeneral');
 actsPersonales = document.getElementsByClassName('actPers');
 
+var contador = 0;
+
 
 function chargePage(){
 
@@ -59,28 +61,37 @@ function chargePage(){
 function changeTitleGeneral(){
 
     localStorage.setItem('tipoCalendar', JSON.stringify('general'));
-    contador = 0;
+
     chargePage();
     
-    for(let act of actsPersonales){
-        act.innerHTML=""
-        act.style.backgroundColor = "white";
-    }
-    for(let act in actsGenerales){
-        actsGenerales[act].innerHTML = actividadesGenerales[act].nombre;
-        actsGenerales[act].style.backgroundColor = actividadesGenerales[act].color;
-    }
+    addActivitiesGeneral();
 }
 
 function changeTitlePersonal(){
     
-    localStorage.setItem('tipoCalendar', JSON.stringify('general'));
-    contador = 0;
+    localStorage.setItem('tipoCalendar', JSON.stringify('personal'));
+
     chargePage();
     
     var aux = "GPB CALENDAR - Calendario Personal";
     document.getElementById('general').innerHTML = aux;
-    
+
+    addActivitiesPersonal();
+}
+
+function addActivitiesGeneral(){
+  for(let act of actsPersonales){
+    act.innerHTML=""
+    act.style.backgroundColor = "white";
+  }
+
+  for(let act in actsGenerales){
+      actsGenerales[act].innerHTML = actividadesGenerales[act].nombre;
+      actsGenerales[act].style.backgroundColor = actividadesGenerales[act].color;
+  }
+}
+
+function addActivitiesPersonal(){
     for(let act of actsGenerales){
         act.innerHTML=""
         act.style.backgroundColor = "white";
@@ -89,7 +100,18 @@ function changeTitlePersonal(){
         actsPersonales[act].innerHTML = actividadesPersonales[act].nombre;
         actsPersonales[act].style.backgroundColor = actividadesPersonales[act].color;
     }
+}
 
+function deleteActivitiesGeneral(){
+  for(let act of actsGenerales){
+    act.innerHTML=""
+    act.style.backgroundColor = "white";
+  }
+  for(let act of actsPersonales){
+    act.innerHTML=""
+    act.style.backgroundColor = "white";
+  }
+  
 }
 
 var offset = 0;
@@ -124,14 +146,40 @@ function makeDateString(date) {
   
 function previousWeek(){
 
+    var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
     offset = offset - 1;
     getWeek(offset);
-    document.getElementById('weeks').innerHTML = day+" - "+day1+" de "+monthS+ " de "+year;
+
+    contador --;
+
+    if(contador != 0){
+      deleteActivitiesGeneral();
+    }else{
+      if(tipo == 'general'){
+        addActivitiesGeneral();
+      }else{
+        addActivitiesPersonal();
+      }
+    }
 }
 
 function nextWeek(){
+  var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
     offset = offset + 1;
     getWeek(offset);
+
+    contador++;
+
+    if(contador != 0){
+      deleteActivitiesGeneral();
+    }
+    else{
+      if(tipo == 'general'){
+        addActivitiesGeneral();
+      }else{
+        addActivitiesPersonal();
+      }
+    }
     
 }
 
