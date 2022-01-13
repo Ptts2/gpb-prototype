@@ -1,10 +1,12 @@
 var date = new Date();
-    var pr = date.toString();
-    var month = date.getMonth()+1;
-    var year = date.getFullYear();
+var pr = date.toString();
+var month = date.getMonth()+1;
+var year = date.getFullYear();
+var day = pr.substring(8,10), day1 = 0;
+var contador = 0;
 
 function chargePage(){
-
+    contador = 0;
     var date = new Date();
     var pr = date.toString();
     var day = pr.substring(8,10), day1 = 0;
@@ -58,6 +60,7 @@ function chargePage(){
 function changeTitleGeneral(){
 
     localStorage.setItem('tipoCalendar', JSON.stringify('general'));
+    contador = 0;
     chargePage();
     
 
@@ -66,7 +69,7 @@ function changeTitleGeneral(){
 function changeTitlePersonal(){
     
     localStorage.setItem('tipoCalendar', JSON.stringify('general'));
-
+    contador = 0;
     chargePage();
     
     var aux = "GPB CALENDAR - Calendario Personal";
@@ -79,6 +82,8 @@ function changeTitlePersonal(){
 function previousWeek(){
     var monthS = "";
     var day = pr.substring(8,10), day1 = 0;
+
+    if(contador ==0){
 
     switch (pr.substring(0,3)){
         case "Mon":
@@ -116,6 +121,8 @@ function previousWeek(){
             day = day-6;
             
             break;
+    }
+        contador = 1;
     }
 
     if(month != 1){
@@ -163,6 +170,10 @@ function previousWeek(){
             break;
     }
 
+
+    day = day-7;
+    day1 = day1-7;
+
     if(month == 12){
         year = year-1;
     }
@@ -173,8 +184,7 @@ function previousWeek(){
 
 function nextWeek(){
     var monthS = "";
-    var day = pr.substring(8,10), day1 = 0;
-
+    if(contador == 0){
     switch (pr.substring(0,3)){
         case "Mon":
             day1 = parseInt(day)+6;
@@ -213,15 +223,36 @@ function nextWeek(){
             break;
     }
 
-    if(month != 12){
+        contador = 1;
+    }
+
+    day = day+7;
+    day1 = day1+7;
+
+    
+
+    /*if(month != 12){
         month = month+1;
     }else{
         month = 1;
-    }
+    }*/
 
     switch (month){
         case 1:
             monthS = "Jan";
+            if(day == 31){
+                day1 = 6;
+            }else if(day == 30){
+                day1 = 5;
+            }else if(day == 29){
+                day1 = 4;
+            }else if(day == 28){
+                day1 = 3;
+            }else if(day == 27){
+                day1 = 2;
+            }else if(day == 26){
+                day1 = 1;
+            }
             break;
         case 2:
             monthS = "Feb";
