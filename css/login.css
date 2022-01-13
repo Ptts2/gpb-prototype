@@ -83,5 +83,13 @@ div.img span {
 }
 
 .img {
-    width: 100px;
+    float: left;
+    margin-left: 100px;
+}
+
+.imagenes {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
