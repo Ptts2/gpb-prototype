@@ -23,7 +23,9 @@
             <header> 
 
                 <div class="headerDivLogo">
+                  <a class="logo" href="calendar.html">
                     <img class="logo" src="res/logo.png" alt="google pero bien logo">
+                  </a>
 
                     <div class ="optionsDropdown"> 
                         <button class="optionsbtn">OPCIONES</button>
@@ -80,9 +82,15 @@
                     <label id="general"></label>
                     <button type="button" onclick="previousWeek();" name="backward"> <img src="res/Flecha-iquierda.PNG" alt="Flecha-izquierda"/></button>
                     <label id="weeks"></label>
-                    <button type="button" onclick="nextWeek()" name="forward"> <img src="res/Flecha-derecha.PNG" alt="Flecha-derecha"/></button>
-                    
+                    <button type="button" onclick="nextWeek()" name="forward"> <img src="res/Flecha-derecha.PNG" alt="Flecha-derecha"/></button>     
                 </h1>
+
+                <input type="checkbox" id="exam" onclick="deleteNotExams()">
+
+                <label id="examlabel" for="exam">
+                  Examenes
+                </label>
+
                 <div class="headercontainer">
                   <div class="tablecontainer">
                 <p id="calendar">
@@ -179,7 +187,7 @@
                         </tr>
                         <tr>                      
                           <td class="c1">08:00</td>                      
-                          <td> </td>                       
+                          <td></td>                       
                           <td  class="actGeneral"></td>
                           <td></td>                      
                           <td></td>

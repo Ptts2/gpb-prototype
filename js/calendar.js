@@ -1,6 +1,6 @@
 actividadesGenerales = [
     {
-      nombre: 'cono',
+      nombre: 'Ex. cono',
       color: '#93c47d'
     },
     {
@@ -44,6 +44,13 @@ actividadesGenerales = [
     }
   ];
 
+  examenes = [
+    {
+      nombre: 'Ex. cono',
+      color: '#93c47d'
+    }
+  ];
+
 actsGenerales = document.getElementsByClassName('actGeneral');
 actsPersonales = document.getElementsByClassName('actPers');
 
@@ -63,6 +70,9 @@ function changeTitleGeneral(){
     localStorage.setItem('tipoCalendar', JSON.stringify('general'));
 
     chargePage();
+
+    document.getElementById("exam").style.visibility="visible";
+    document.getElementById("examlabel").style.visibility="visible";
     
     addActivitiesGeneral();
 }
@@ -73,6 +83,9 @@ function changeTitlePersonal(){
 
     chargePage();
     
+    document.getElementById("exam").style.visibility="hidden";
+    document.getElementById("examlabel").style.visibility="hidden";
+
     var aux = "GPB CALENDAR - Calendario Personal";
     document.getElementById('general').innerHTML = aux;
 
@@ -114,6 +127,35 @@ function deleteActivitiesGeneral(){
   
 }
 
+function deleteNotExams(){
+
+  var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
+  
+  var checkbox = document.getElementById('exam');
+
+  if(checkbox.checked==true){
+  
+  for(let act in actsGenerales){
+    var bool = false;
+    for(let act2 of examenes){
+      
+      if(actividadesGenerales[act].nombre == act2.nombre){
+        bool = true;
+      }
+    }
+    if(!bool){
+      actsGenerales[act].innerHTML=""
+      actsGenerales[act].style.backgroundColor = "white";
+    }
+  }
+  }else{
+    if(tipo=='general'){
+      addActivitiesGeneral();
+    }
+  }
+      
+}
+
 var offset = 0;
 var today = new Date();
 var dayOfWeekOffset = today.getDay();
@@ -126,8 +168,6 @@ function getWeek(offset) {
 
   var lastDay = new Date(firstDay);
   lastDay.setDate(lastDay.getDate() + 6);
-
-  console.log(makeDateString(firstDay), makeDateString(lastDay));
 
   document.getElementById('weeks').innerHTML = makeDateString(firstDay) + ' - ' + makeDateString(lastDay);
 

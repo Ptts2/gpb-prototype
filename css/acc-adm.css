@@ -63,6 +63,10 @@ td {
    background:  #c9c9c9;
 }
 
+#tos{
+    margin-left:350px;
+}
+
 @media screen and (max-width: 955px){
     .divAdmData{
         display: flex;
