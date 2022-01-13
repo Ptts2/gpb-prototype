@@ -29,8 +29,11 @@ window.onload = ()=>{
 
         tipoCuenta = JSON.parse(localStorage.getItem('tipoCuenta'));
         loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
-
+        
         document.getElementById('loggedUsername').innerHTML = usuarios[loggedUser].username
+    }
+    if(document.URL.includes("calendar.html")){
+        chargePage();
     }
     
     if ( document.URL.includes("profile.html") ) {
