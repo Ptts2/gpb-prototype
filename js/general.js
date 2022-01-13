@@ -11,3 +11,8 @@ function closeNotification(){
     el.style.display = 'none';
 }
 
+function changeCalendar(tipo){
+
+    localStorage.setItem('tipoCalendar', JSON.stringify(tipo));
+    window.location='calendar.html'
+}
