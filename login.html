@@ -2,86 +2,94 @@
 <html>
 
 
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> GPB Login </title>
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/login.css">
-        <script src="js/login.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GPB Login </title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js"></script>
+</head>
 
-    <body>
-        <div class="mainDiv">
-            <header> 
+<body>
+    <div class="mainDiv">
+        <header>
 
-                <div class="headerDivLogo">
-                    <img class="logo" src="res/logo.png" alt="google pero bien logo">    
-                </div>
+            <div class="headerDivLogo">
+                <img class="logo" src="res/logo.png" alt="google pero bien logo">
+            </div>
 
-                <div class="headerLogin">
-                    <p> ¡No has iniciado seasión!</p>
-                    <div>
-                        <button class="open_button" onClick="openLogin()"> Inicia sesión </button>
-                        <div class="popup" id="loginPopup">
+            <div class="headerLogin">
+                <p> ¡No has iniciado seasión!</p>
+                <div>
+                    <button class="open_button" onClick="openLogin()"> Inicia sesión </button>
+                    <div class="popup" id="loginPopup">
 
-                            <div class="loginPopupBody"> 
-                                <form id="loginForm"> 
-                                    <label for="unameInputL">Username: </label>
-                                    <input type="text" name="unameL" id="unameInputL" required></input>
-                                    <br>
-                                    <label for="pwInputL">Password: </label>
-                                    <input type="password" name="passowrdL" id="pwInputL" required></input>
-                                </form>
-                            </div>
-                            <button class="loginBut"onClick="login()">Entrar</button>
-                            <button class="close_button"onClick="closeLogin()">Cerrar</button>
+                        <div class="loginPopupBody">
+                            <form id="loginForm">
+                                <label for="unameInputL">Username: </label>
+                                <input type="text" name="unameL" id="unameInputL" required></input>
+                                <br>
+                                <label for="pwInputL">Password: </label>
+                                <input type="password" name="passowrdL" id="pwInputL" required></input>
+                            </form>
                         </div>
-                    </div>
-
-                    <div>
-                        <button class="open_button" onClick="openRegister()"> Registrate ahora! </button>
-
-                        <div class="popup" id="registerPopup">
-
-                            <div class="registerPopupBody"> 
-                                <form id="registerForm"> 
-                                    <label for="nombreInputR">Nombre: </label>
-                                    <input type="text" name="nombreR" id="nombreInputR" required></input>
-                                    <br>
-
-                                    <label for="apellidosInputR">Apellidos: </label>
-                                    <input type="text" name="apellidosR" id="apellidosInputR" required></input>
-                                    <br>
-
-                                    <label for="unameInputR">Username: </label>
-                                    <input type="text" name="unameR" id="unameInputR" required></input>
-                                    <br>
-
-                                    <label for="emailInputR">Email: </label>
-                                    <input type="email" name="emailR" id="emailInputR" required></input>
-                                    <br>
-
-                                    <label for="passwordInputR">Password: </label>
-                                    <input type="password" name="passwordR" id="passwordInputR" required></input>
-                                    <br>
-                                    
-
-                                </form>
-                            </div>
-                            <button class="registerBut"onClick="register()">Registrarse</button>
-                            <button class="close_button"onClick="closeRegister()">Cerrar</button>
-                        </div>
+                        <button class="loginBut" onClick="login()">Entrar</button>
+                        <button class="close_button" onClick="closeLogin()">Cerrar</button>
                     </div>
                 </div>
-                
-            </header>
 
-            <main class="loginBody"> 
+                <div>
+                    <button class="open_button" onClick="openRegister()"> Registrate ahora! </button>
 
-                BODY 
+                    <div class="popup" id="registerPopup">
 
-            </main>
-        </div> 
-    </body>
+                        <div class="registerPopupBody">
+                            <form id="registerForm">
+                                <label for="nombreInputR">Nombre: </label>
+                                <input type="text" name="nombreR" id="nombreInputR" required></input>
+                                <br>
+
+                                <label for="apellidosInputR">Apellidos: </label>
+                                <input type="text" name="apellidosR" id="apellidosInputR" required></input>
+                                <br>
+
+                                <label for="unameInputR">Username: </label>
+                                <input type="text" name="unameR" id="unameInputR" required></input>
+                                <br>
+
+                                <label for="emailInputR">Email: </label>
+                                <input type="email" name="emailR" id="emailInputR" required></input>
+                                <br>
+
+                                <label for="passwordInputR">Password: </label>
+                                <input type="password" name="passwordR" id="passwordInputR" required></input>
+                                <br>
+
+
+                            </form>
+                        </div>
+                        <button class="registerBut" onClick="register()">Registrarse</button>
+                        <button class="close_button" onClick="closeRegister()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <main class="loginBody">
+            <div id="contentBody">
+                <div id="promo">
+                    <t1 id="gpb"> Google Pero Bien</t1> <br>
+                    <t2 id="subt"> La nueva forma de organizar la vida academica </t2>
+                </div>
+            </div>
+            <div class="imagenes">
+                <div class='img' id="left-img"> <img class="imgs" src="res/login_background.jpg" alt="imgagen prom1"><span>Unión entre eventos personales y academicos</span></div>
+                <div class='img' id="center-img"> <img class="imgs" src="res/grupos.jpg" alt="imgagen prom2"><span>Gestión de grupos integrada</span></div>
+                <div class='img' id="right-img"> <img class="imgs" src="res/avisos.jpg" alt="imgagen prom3"><span>Notificaciones y avisos de eventos próximos</span></div>
+            </div>
+        </main>
+    </div>
+</body>
 
 </html>
