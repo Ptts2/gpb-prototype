@@ -23,7 +23,7 @@ actividadesGenerales = [
   
  actividadesPersonales = [
     {
-      nombre: 'Mates (Basket)',
+      nombre: 'Mates',
       color: '#ea9999'
     },
     {
