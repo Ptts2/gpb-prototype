@@ -33,7 +33,15 @@ window.onload = ()=>{
         document.getElementById('loggedUsername').innerHTML = usuarios[loggedUser].username
     }
     if(document.URL.includes("calendar.html")){
-        chargePage();
+        
+
+        tipoCalendar = JSON.parse(localStorage.getItem('tipoCalendar'));
+
+        if(tipoCalendar == 'general'){
+            changeTitleGeneral();
+        }else{
+            changeTitlePersonal();
+        }
     }
     
     if ( document.URL.includes("profile.html") ) {
