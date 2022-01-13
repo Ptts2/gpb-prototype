@@ -7,6 +7,7 @@
         <title> GPB Calendar </title>
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/tos.css">
+        <script src="js/general.js"></script>
         <script src="js/tos.js"></script>
         <script src="js/login.js"></script>
     </head>
@@ -21,7 +22,6 @@
                     <div class ="optionsDropdown"> 
                         <button class="optionsbtn">OPCIONES</button>
                         <div class="options-content">
-                            <!-- TODO: Opciones de opciones-->
                             <a class="optionDpButton" href="#">Crear clase</a>
                             <a class="optionDpButton" href="#">Crear grupo</a>
                             <a class="optionDpButton" href="#">Crear asignatura</a>
@@ -29,9 +29,8 @@
                         </div>
                     </div>
 
-                    <!-- TODO: Hacer las actions para que el javascript cambie los textos (el calendario no lo cambiamos xd)-->
                     <div class="calendar-bts-div">
-                        <button class="calendar-btns">GENERAL</button>
+                        <button class="calendar-btns" onclick="window.location='calendar.html'">GENERAL</button>
                         <button class="calendar-btns">PERSONAL</button>
                     </div>
                 </div>
@@ -57,7 +56,7 @@
                     <div class ="userDropdown"> 
                         <img class="profilephoto" src="res/ppf.png">
                         <div class="user-options-content">
-                            <!-- TODO: Opciones de opciones-->
+
                             <a class="optionUserButton" href="./profile.html">Mi perfil</a>
                             <a class="optionUserButton" href="./acc-adm-panel.html">Administrar mi cuenta</a>
                             <a class="optionUserButton" onClick="cerrarSesion()">Cerrar sesión</a>
