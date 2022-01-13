@@ -93,7 +93,7 @@ function closeRegister(){
 function register(){
     alert("Los registros estan cerrados");
 }
-Aut.style.backgroundColor
+
 function login(){
 
     inputUname = document.getElementById('unameInputL').value;

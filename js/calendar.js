@@ -1,9 +1,59 @@
+actividadesGenerales = [
+    {
+      nombre: 'cono',
+      color: '#93c47d'
+    },
+    {
+      nombre: 'lengua',
+      color: '#0b5394'
+    },
+    {
+      nombre: 'mates',
+      color: '#f1c232'
+    },
+    {
+      nombre: 'accesibilidad',
+      color: '#9fc5e8'
+    },
+    {
+      nombre: 'geografia',
+      color: '#cc0000'
+    }
+  ];
+  
+ actividadesPersonales = [
+    {
+      nombre: 'Mates',
+      color: '#274e13'
+    },
+    {
+      nombre: 'Fiesta',
+      color: '#4c1130'
+    },
+    {
+      nombre: 'Comida',
+      color: '#a64d79'
+    },
+    {
+      nombre: 'Gym',
+      color: '#76a5af'
+    },
+    {
+      nombre: 'Bici',
+      color: '#ffe599'
+    }
+  ];
+
+actsGenerales = document.getElementsByClassName('actGeneral');
+actsPersonales = document.getElementsByClassName('actPers');
+
 var date = new Date();
 var pr = date.toString();
 var month = date.getMonth()+1;
 var year = date.getFullYear();
 var day = pr.substring(8,10), day1 = 0;
 var contador = 0;
+
 
 function chargePage(){
     contador = 0;
@@ -63,7 +113,14 @@ function changeTitleGeneral(){
     contador = 0;
     chargePage();
     
-
+    for(let act of actsPersonales){
+        act.innerHTML=""
+        act.style.backgroundColor = "white";
+    }
+    for(let act in actsGenerales){
+        actsGenerales[act].innerHTML = actividadesGenerales[act].nombre;
+        actsGenerales[act].style.backgroundColor = actividadesGenerales[act].color;
+    }
 }
 
 function changeTitlePersonal(){
@@ -75,7 +132,14 @@ function changeTitlePersonal(){
     var aux = "GPB CALENDAR - Calendario Personal";
     document.getElementById('general').innerHTML = aux;
     
-    
+    for(let act of actsGenerales){
+        act.innerHTML=""
+        act.style.backgroundColor = "white";
+    }
+    for(let act in actsPersonales){
+        actsPersonales[act].innerHTML = actividadesPersonales[act].nombre;
+        actsPersonales[act].style.backgroundColor = actividadesPersonales[act].color;
+    }
 
 }
 
