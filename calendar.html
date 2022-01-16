@@ -30,9 +30,48 @@
                     <div class ="optionsDropdown"> 
                         <button class="optionsbtn">OPCIONES</button>
                         <div class="options-content">
+                          <div>
+                            <a class="optionDpButton" id="button" data-modal="modalOne">Crear clase</a>
+                            <div id="modalOne" class="modal">
+                              <div class="modal-content">
+                                <div class="contact-form">
+                                  <a class="close">&times;</a>
+                                  <form action="/">
+                                    <h2>Crear clase</h2>
+                                    <div>
+                                      <input type="text" name="name" placeholder="Nombre de la clase">
+                                      <input type="date" name="name" placeholder="Fecha">
+                                      <input type="text" name="name" placeholder="Lugar">
+                                      <input type="text" name="name" placeholder="Horario">
+                                    </div>
+                                    <button type="submit" >Enviar</button>
+                                    <button type="submit" >Cerrar</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <script>
+                              let modalBtns = [...document.querySelectorAll("#button")];
+                              modalBtns.forEach(function(btn) {
+                                btn.onclick = function() {
+                                  let modal = btn.getAttribute('data-modal');
+                                  document.getElementById(modal)
+                                    .style.display = "block";
+                                }
+                              });
+                              let closeBtns = [...document.querySelectorAll(".close")];
+                              closeBtns.forEach(function(btn) {
+                                btn.onclick = function() {
+                                  let modal = btn.closest('.modal');
+                                  modal.style.display = "none";
+                                }
+                              });
 
-                            <a class="optionDpButton" href="#">Crear clase</a>
-                            <a class="optionDpButton" href="#">Crear grupo</a>
+                            </script>
+
+                        </div>
+                            <a class="optionDpButton" onclick="os()">Crear grupo</a>
                             <a class="optionDpButton" href="#">Crear asignatura</a>
                             <a class="optionDpButton" href="#">Crear encuesta</a>
                         </div>
@@ -79,7 +118,7 @@
             <main class="calendarBody"> 
 
                 <h1 id = "title">
-                    <label id="general"></label>
+                    <label id="general"></label><br>
                     <button type="button" onclick="previousWeek();" name="backward"> <img src="res/Flecha-iquierda.PNG" alt="Flecha-izquierda"/></button>
                     <label id="weeks"></label>
                     <button type="button" onclick="nextWeek()" name="forward"> <img src="res/Flecha-derecha.PNG" alt="Flecha-derecha"/></button>     
@@ -91,10 +130,6 @@
                   <label id="examlabel" for="exam">
                     Examenes
                   </label>
-                </div>
-
-                <div class="popup" onclick="myFunction()">Click me to toggle the popup!
-                  <span class="popuptext" id="myPopup">A Simple Popup!</span>
                 </div>
 
                 <div class="headercontainer">
