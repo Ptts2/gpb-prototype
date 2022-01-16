@@ -40,9 +40,13 @@
                                     <h2>Crear clase</h2>
                                     <div>
                                       <input type="text" name="name" placeholder="Nombre de la clase">
+                                      <input type="text" name="name" placeholder="Grupo">
                                       <input type="date" name="name" placeholder="Fecha">
                                       <input type="text" name="name" placeholder="Lugar">
-                                      <input type="text" name="name" placeholder="Horario">
+                                      Horario de inicio
+                                      <input type="time" name="name" placeholder="Horario">
+                                      Horario de fin
+                                      <input type="time" name="name" placeholder="Horario">
                                     </div>
                                     <button>Enviar</button>
                                     <button class="close1">Cerrar</button>
@@ -52,9 +56,62 @@
                             </div>
 
                         </div>
-                            <a class="optionDpButton" onclick="os()">Crear grupo</a>
-                            <a class="optionDpButton" href="#">Crear asignatura</a>
-                            <a class="optionDpButton" href="#">Crear encuesta</a>
+                            <a class="optionDpButton" id="button" data-modal="modal2">Crear grupo</a>
+                            <div id="modal2" class="modal">
+                              <div class="modal-content">
+                                <div class="contact-form">
+                                  <a class="close">&times;</a>
+                                  <form>
+                                    <h2>Crear grupo</h2>
+                                    <div>
+                                      <input type="text" name="name" placeholder="Numero del grupo">
+                                      <input type="text" name="name" placeholder="Tamaño">
+                                    </div>
+                                    <button>Enviar</button>
+                                    <button class="close1">Cerrar</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="optionDpButton" id="button" data-modal="modal3">Crear asignatura</a>
+                            <div id="modal3" class="modal">
+                              <div class="modal-content">
+                                <div class="contact-form">
+                                  <a class="close">&times;</a>
+                                  <form>
+                                    <h2>Crear asignatura</h2>
+                                    <div>
+                                      <input type="text" name="name" placeholder="Nombre de la asignatura">
+                                      <input type="date" name="name" placeholder="Fecha">
+                                      <input type="text" name="name" placeholder="Lugar de clases">
+                                    </div>
+                                    <button>Enviar</button>
+                                    <button class="close1">Cerrar</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="optionDpButton" id="button" data-modal="modal4">Crear encuesta</a>
+                            <div id="modal4" class="modal">
+                              <div class="modal-content">
+                                <div class="contact-form">
+                                  <a class="close">&times;</a>
+                                  <form>
+                                    <h2>Crear encuesta</h2>
+                                    <div>
+                                      <input type="text" name="name" placeholder="Nombre de la Encuesta">
+                                      <input type="text" name="name" placeholder="Opciones">
+                                      Horario de inicio
+                                      <input type="time" name="name" placeholder="Horario">
+                                      Horario de fin
+                                      <input type="time" name="name" placeholder="Horario">
+                                    </div>
+                                    <button>Enviar</button>
+                                    <button class="close1">Cerrar</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
 
