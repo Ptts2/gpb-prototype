@@ -91,9 +91,9 @@ function changeTitleGeneral(){
                     <input type="text" name="name" placeholder="Nombre de la clase">
                     <input type="text" name="name" placeholder="Grupo">
                     <input type="date" name="name" placeholder="Fecha">
-                    <input type="text" name="name" placeholder="Lugar">
+                    <input type="text" name="name" placeholder="Lugar"><br>
                     Horario de inicio
-                    <input type="time" name="name" placeholder="Horario">
+                    <input type="time" name="name" placeholder="Horario"><br>
                     Horario de fin
                     <input type="time" name="name" placeholder="Horario">
                   </div>
@@ -149,9 +149,9 @@ function changeTitleGeneral(){
                   <h2>Crear encuesta</h2>
                   <div>
                     <input type="text" name="name" placeholder="Nombre de la Encuesta">
-                    <input type="text" name="name" placeholder="Opciones">
+                    <input type="text" name="name" placeholder="Opciones"><br>
                     Horario de inicio
-                    <input type="time" name="name" placeholder="Horario">
+                    <input type="time" name="name" placeholder="Horario"><br>
                     Horario de fin
                     <input type="time" name="name" placeholder="Horario">
                   </div>
@@ -197,9 +197,9 @@ function changeTitlePersonal(){
                 <div>
                   <input type="text" name="name" placeholder="Nombre de la actividad">
                   <input type="date" name="name" placeholder="Fecha">
-                  <input type="text" name="name" placeholder="Lugar">
+                  <input type="text" name="name" placeholder="Lugar"><br>
                   Horario de inicio
-                  <input type="time" name="name" placeholder="Horario">
+                  <input type="time" name="name" placeholder="Horario"><br>
                   Horario de fin
                   <input type="time" name="name" placeholder="Horario">
                 </div>
