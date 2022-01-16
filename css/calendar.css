@@ -2,7 +2,9 @@
     margin-left: 150px;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
-
+}
+#title button{
+  flex-direction: row;
 }
 
 #left{
@@ -109,4 +111,92 @@ th:first-child div{
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+.calendarBody{
+  display: flex;
+  flex-direction:column;
+}
+
+/* checkbox style*/
+#examCheck{
+  margin-left: 80%;
+  background-color: #C5C6C7;
+  padding: 10px;
+  margin-right: 7%;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3px;;
+}
+
+#examCheck input {
+  display: none;
+}
+
+#examlabel, #exam{
+  cursor: pointer;
+}
+
+#examCheck input + #examlabel:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+#examCheck input + #examlabel:active:before {
+  transform: scale(0);
+}
+
+#examCheck input:checked + #examlabel:before {
+  background-color: #3cb472;
+  border-color: #3cb371;
+  color: #fff;
+}
+
+#examCheck input:disabled + #examlabel:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+#examCheck input:checked:disabled + #examlabel:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+@media screen and (max-width: 1325px){
+
+  .tablecontainer {
+    width: 50em; 
+  }
+}
+
+@media screen and (max-width: 910px){
+  .tablecontainer {
+    width: 39em; 
+  }
+
+  .tablecontainer table {
+    border-spacing: 0;
+    width: 10%;
+  }
+
+  .headercontainer {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 700px){
+  #title{
+    margin-left: 98px;
+    font-size: 39.5;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
 }

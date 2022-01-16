@@ -73,6 +73,7 @@ function changeTitleGeneral(){
 
     document.getElementById("exam").style.visibility="visible";
     document.getElementById("examlabel").style.visibility="visible";
+    document.getElementById("examCheck").style.visibility="visible";
     
     addActivitiesGeneral();
 }
@@ -85,6 +86,7 @@ function changeTitlePersonal(){
     
     document.getElementById("exam").style.visibility="hidden";
     document.getElementById("examlabel").style.visibility="hidden";
+    document.getElementById("examCheck").style.visibility="hidden";
 
     var aux = "GPB CALENDAR - Calendario Personal";
     document.getElementById('general').innerHTML = aux;
