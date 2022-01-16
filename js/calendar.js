@@ -62,19 +62,111 @@ function chargePage(){
     getWeek();
     var aux = "GPB CALENDAR - Calendario General";
     document.getElementById('general').innerHTML = aux;
-    
+    setPopupOptions();
 }
 
 function changeTitleGeneral(){
 
     localStorage.setItem('tipoCalendar', JSON.stringify('general'));
-
+    cuenta = JSON.parse(localStorage.getItem('tipoCuenta'));
     chargePage();
 
     document.getElementById("exam").style.visibility="visible";
     document.getElementById("examlabel").style.visibility="visible";
     document.getElementById("examCheck").style.visibility="visible";
     
+    
+    if(cuenta == 'profesor'){
+      document.getElementById('optionList').innerHTML=`
+          <div>
+          <a class="optionDpButton" id="button" data-modal="modalOne">Crear clase</a>
+
+          <div id="modalOne" class="modal">
+            <div class="modal-content">
+              <div class="contact-form">
+                <a class="close">&times;</a>
+                <form>
+                  <h2>Crear clase</h2>
+                  <div>
+                    <input type="text" name="name" placeholder="Nombre de la clase">
+                    <input type="text" name="name" placeholder="Grupo">
+                    <input type="date" name="name" placeholder="Fecha">
+                    <input type="text" name="name" placeholder="Lugar">
+                    Horario de inicio
+                    <input type="time" name="name" placeholder="Horario">
+                    Horario de fin
+                    <input type="time" name="name" placeholder="Horario">
+                  </div>
+                  <button>Enviar</button>
+                  <button class="close1">Cerrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+      </div>
+          <a class="optionDpButton" id="button" data-modal="modal2">Crear grupo</a>
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <div class="contact-form">
+                <a class="close">&times;</a>
+                <form>
+                  <h2>Crear grupo</h2>
+                  <div>
+                    <input type="text" name="name" placeholder="Numero del grupo">
+                    <input type="text" name="name" placeholder="Tamaño">
+                  </div>
+                  <button>Enviar</button>
+                  <button class="close1">Cerrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <a class="optionDpButton" id="button" data-modal="modal3">Crear asignatura</a>
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+              <div class="contact-form">
+                <a class="close">&times;</a>
+                <form>
+                  <h2>Crear asignatura</h2>
+                  <div>
+                    <input type="text" name="name" placeholder="Nombre de la asignatura">
+                    <input type="date" name="name" placeholder="Fecha">
+                    <input type="text" name="name" placeholder="Lugar de clases">
+                  </div>
+                  <button>Enviar</button>
+                  <button class="close1">Cerrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <a class="optionDpButton" id="button" data-modal="modal4">Crear encuesta</a>
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <div class="contact-form">
+                <a class="close">&times;</a>
+                <form>
+                  <h2>Crear encuesta</h2>
+                  <div>
+                    <input type="text" name="name" placeholder="Nombre de la Encuesta">
+                    <input type="text" name="name" placeholder="Opciones">
+                    Horario de inicio
+                    <input type="time" name="name" placeholder="Horario">
+                    Horario de fin
+                    <input type="time" name="name" placeholder="Horario">
+                  </div>
+                  <button>Enviar</button>
+                  <button class="close1">Cerrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      `
+      setPopupOptions();
+    }else{
+      document.getElementById("optionsDropdown").style.visibility = "hidden";
+    }
+
     addActivitiesGeneral();
 }
 
@@ -90,7 +182,36 @@ function changeTitlePersonal(){
 
     var aux = "GPB CALENDAR - Calendario Personal";
     document.getElementById('general').innerHTML = aux;
+    document.getElementById("optionsDropdown").style.visibility = "visible";
+    document.getElementById('exam').checked = false;
+    document.getElementById('optionList').innerHTML = `
+        <div>
+        <a class="optionDpButton" id="button" data-modal="modalOne">Crear actividad</a>
 
+        <div id="modalOne" class="modal">
+          <div class="modal-content">
+            <div class="contact-form">
+              <a class="close">&times;</a>
+              <form>
+                <h2>Crear actividad</h2>
+                <div>
+                  <input type="text" name="name" placeholder="Nombre de la actividad">
+                  <input type="date" name="name" placeholder="Fecha">
+                  <input type="text" name="name" placeholder="Lugar">
+                  Horario de inicio
+                  <input type="time" name="name" placeholder="Horario">
+                  Horario de fin
+                  <input type="time" name="name" placeholder="Horario">
+                </div>
+                <button>Enviar</button>
+                <button class="close1">Cerrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    `
+    setPopupOptions();
     addActivitiesPersonal();
 }
 
@@ -187,7 +308,7 @@ function makeDateString(date) {
 }
   
 function previousWeek(){
-
+    document.getElementById('exam').checked = false;
     var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
     offset = offset - 1;
     getWeek(offset);
@@ -206,7 +327,8 @@ function previousWeek(){
 }
 
 function nextWeek(){
-  var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
+    document.getElementById('exam').checked = false;
+    var tipo = JSON.parse(localStorage.getItem('tipoCalendar'));
     offset = offset + 1;
     getWeek(offset);
 
@@ -227,27 +349,29 @@ function nextWeek(){
 
 /* Popups opciones */
 
-let modalBtns = [...document.querySelectorAll("#button")];
+function setPopupOptions(){
+  let modalBtns = [...document.querySelectorAll("#button")];
 
-modalBtns.forEach( (btn) => {
+  modalBtns.forEach( (btn) => {
 
-  btn.onclick = () => {
+    btn.onclick = () => {
 
-    let modal = btn.getAttribute('data-modal');
-    document.getElementById(modal)
-      .style.display = "block";
-  }
+      let modal = btn.getAttribute('data-modal');
+      document.getElementById(modal)
+        .style.display = "block";
+    }
 
-});
+  });
 
-let closeBtns = [...document.querySelectorAll(".close1"), ...document.querySelectorAll(".close")];
+  let closeBtns = [...document.querySelectorAll(".close1"), ...document.querySelectorAll(".close")];
 
-closeBtns.forEach(function(btn) {
+  closeBtns.forEach((btn) => {
 
-  btn.onclick = function() {
-    let modal = btn.closest('.modal');
-    modal.style.display = "none";
-  }
-  
-});
+    btn.onclick = () => {
+      let modal = btn.closest('.modal');
+      modal.style.display = "none";
+    }
+    
+  });
 
+}
