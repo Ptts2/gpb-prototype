@@ -12,7 +12,6 @@
         <title> GPB Calendar </title>
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/calendar.css">
-        <script src="js/calendar.js"></script>
         <script src="js/general.js"></script>
         <script src="js/login.js"></script>
     </head>
@@ -32,11 +31,12 @@
                         <div class="options-content">
                           <div>
                             <a class="optionDpButton" id="button" data-modal="modalOne">Crear clase</a>
+
                             <div id="modalOne" class="modal">
                               <div class="modal-content">
                                 <div class="contact-form">
                                   <a class="close">&times;</a>
-                                  <form action="/">
+                                  <form>
                                     <h2>Crear clase</h2>
                                     <div>
                                       <input type="text" name="name" placeholder="Nombre de la clase">
@@ -44,31 +44,12 @@
                                       <input type="text" name="name" placeholder="Lugar">
                                       <input type="text" name="name" placeholder="Horario">
                                     </div>
-                                    <button type="submit" >Enviar</button>
-                                    <button type="submit" >Cerrar</button>
+                                    <button>Enviar</button>
+                                    <button class="close1">Cerrar</button>
                                   </form>
                                 </div>
                               </div>
                             </div>
-                            
-                            <script>
-                              let modalBtns = [...document.querySelectorAll("#button")];
-                              modalBtns.forEach(function(btn) {
-                                btn.onclick = function() {
-                                  let modal = btn.getAttribute('data-modal');
-                                  document.getElementById(modal)
-                                    .style.display = "block";
-                                }
-                              });
-                              let closeBtns = [...document.querySelectorAll(".close")];
-                              closeBtns.forEach(function(btn) {
-                                btn.onclick = function() {
-                                  let modal = btn.closest('.modal');
-                                  modal.style.display = "none";
-                                }
-                              });
-
-                            </script>
 
                         </div>
                             <a class="optionDpButton" onclick="os()">Crear grupo</a>
@@ -393,5 +374,5 @@
             </main>
         </div> 
     </body>
-
+    <script src="js/calendar.js"></script>
 </html>
