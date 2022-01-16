@@ -85,11 +85,17 @@
                     <button type="button" onclick="nextWeek()" name="forward"> <img src="res/Flecha-derecha.PNG" alt="Flecha-derecha"/></button>     
                 </h1>
 
-                <input type="checkbox" id="exam" onclick="deleteNotExams()">
+                <div id="examCheck">
+                  <input type="checkbox" id="exam" onclick="deleteNotExams()">
 
-                <label id="examlabel" for="exam">
-                  Examenes
-                </label>
+                  <label id="examlabel" for="exam">
+                    Examenes
+                  </label>
+                </div>
+
+                <div class="popup" onclick="myFunction()">Click me to toggle the popup!
+                  <span class="popuptext" id="myPopup">A Simple Popup!</span>
+                </div>
 
                 <div class="headercontainer">
                   <div class="tablecontainer">
