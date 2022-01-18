@@ -173,6 +173,7 @@ function changeTitleGeneral(){
 function changeTitlePersonal(){
     
     localStorage.setItem('tipoCalendar', JSON.stringify('personal'));
+    cuenta = JSON.parse(localStorage.getItem('tipoCuenta'));
 
     chargePage();
     
@@ -180,7 +181,43 @@ function changeTitlePersonal(){
     document.getElementById("examlabel").style.visibility="hidden";
     document.getElementById("examCheck").style.visibility="hidden";
 
+    
     var aux = "GPB CALENDAR - Calendario Personal";
+
+    
+    var opcionProfe = ``
+
+    if(cuenta == 'profesor'){
+
+      opcionProfe=`
+      <div>
+        <a class="optionDpButton" id="button" data-modal="modalTwo">Crear tutoria</a>
+
+        <div id="modalTwo" class="modal">
+          <div class="modal-content">
+            <div class="contact-form">
+              <a class="close">&times;</a>
+              <form>
+                <h2>Crear tutoria</h2>
+                <div>
+                  <input type="text" name="name" placeholder="Nombre">
+                  <input type="text" name="name" placeholder="Alumno">
+                  <input type="date" name="name" placeholder="Fecha">
+                  <input type="text" name="name" placeholder="Lugar"><br>
+                  Horario de inicio
+                  <input type="time" name="name" placeholder="Horario"><br>
+                  Horario de fin
+                  <input type="time" name="name" placeholder="Horario">
+                </div>
+                <button>Enviar</button>
+                <button class="close1">Cerrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      `
+    }
     document.getElementById('general').innerHTML = aux;
     document.getElementById("optionsDropdown").style.visibility = "visible";
     document.getElementById('exam').checked = false;
@@ -210,7 +247,7 @@ function changeTitlePersonal(){
           </div>
         </div>
       </div>
-    `
+    `+opcionProfe
     setPopupOptions();
     addActivitiesPersonal();
 }
